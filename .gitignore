@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / IDE folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# AI tooling config
+.claude/
+.claudeignore
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

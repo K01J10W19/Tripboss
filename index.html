@@ -254,12 +254,9 @@
         <!-- video section -->
         <section id = "video">
             <div class = "video-wrapper flex">
-                <video loop>
+                <video loop muted playsinline preload = "metadata">
                     <source src = "videos/video-section.mp4" type = "video/mp4">
                 </video>
-                <button type = "button" id = "play-btn">
-                    <i class = "fas fa-play"></i>
-                </button>
             </div>
         </section>
         <!-- end of video section -->
@@ -330,15 +327,18 @@
         <!-- js -->
         <script src = "js/script.js"></script>
         <script>
-            // play/pause video
+            // auto play/pause video when section is in view
             let video = document.querySelector('.video-wrapper video');
-            document.getElementById('play-btn').addEventListener('click', () => {
-                if(video.paused){
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
+            let videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        video.play().catch(() => {});
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.5 });
+            videoObserver.observe(video);
         </script>
     </body>
 </html>

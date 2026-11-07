@@ -433,26 +433,6 @@ header{
     -o-object-fit: cover;
        object-fit: cover;
 }
-#play-btn{
-    position: absolute;
-    z-index: 5;
-    width: 70px;
-    height: 70px;
-    background-color: var(--green);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.8rem;
-    padding-left: 0.4rem;
-    -webkit-transition: var(--trans);
-    -o-transition: var(--trans);
-    transition: var(--trans);
-}
-#play-btn:hover{
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-}
 
 /* footer */
 footer{
